@@ -1,0 +1,60 @@
+<!--
+  ~ Copyright 2022 Adrian Herscu
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Tutorials" verbose="1" parallel="tests">
+  <listeners>
+    <!--    <listener-->
+    <!--      class-name="dev.aherscu.qa.jgiven.webdriver.utils.SauceLabsReporter"/>-->
+    <!--    <listener-->
+    <!--        class-name="dev.aherscu.qa.jgiven.commons.utils.TestRetryAnalyzer" />-->
+    <listener
+      class-name="dev.aherscu.qa.jgiven.reporter.QaJGivenPerMethodReporter"/>
+  </listeners>
+
+  <test name="TestNG Tutorials" parallel="methods">
+    <packages>
+      <package name="it.pkg.scenarios.tutorial1"/>
+    </packages>
+  </test>
+
+  <test name="Hamcrest Tutorials" parallel="methods">
+    <packages>
+      <package name="it.pkg.scenarios.tutorial2"/>
+    </packages>
+  </test>
+
+  <test name="JGiven Selenium Tutorials" parallel="classes">
+    <packages>
+      <package name="it.pkg.scenarios.tutorial3"/>
+    </packages>
+  </test>
+
+  <test name="JGiven REST Tutorials" parallel="classes">
+    <packages>
+      <package name="it.pkg.scenarios.tutorial6"/>
+    </packages>
+  </test>
+
+  <test name="JGiven Windows Tutorials">
+    <packages>
+      <!-- ISSUE still fails on GitHub
+        see https://stackoverflow.com/questions/74085088/running-gui-application-on-github-hosted-runner
+        and https://github.com/orgs/community/discussions/36704
+        -->
+      <!-- <package name="it.pkg.scenarios.tutorial5"/>-->
+    </packages>
+  </test>
+</suite>
