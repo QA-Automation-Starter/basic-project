@@ -17,18 +17,12 @@ package it.pkg;
 
 import static dev.aherscu.qa.testing.utils.StringUtilsExtensions.*;
 
-import jakarta.ws.rs.core.*;
-import java.net.*;
-
-import java.util.function.*;
 import javax.annotation.concurrent.*;
 
 import org.apache.commons.configuration.*;
 
 import dev.aherscu.qa.jgiven.webdriver.*;
 import jakarta.ws.rs.client.*;
-import lombok.*;
-import org.apache.commons.configuration.Configuration;
 
 /**
  * Represents the configuration parameters for tests.
