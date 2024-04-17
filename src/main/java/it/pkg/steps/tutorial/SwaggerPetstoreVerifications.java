@@ -17,16 +17,18 @@
 package it.pkg.steps.tutorial;
 
 import static dev.aherscu.qa.testing.utils.ObjectMapperUtils.*;
-import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.MatcherAssert.*;
+
+import java.util.stream.*;
+
+import org.hamcrest.*;
 
 import com.tngtech.jgiven.annotation.*;
+
 import dev.aherscu.qa.jgiven.rest.steps.*;
-import dev.aherscu.qa.testing.utils.*;
 import it.pkg.*;
 import it.pkg.model.tutorial.*;
 import jakarta.ws.rs.client.*;
-import java.util.stream.*;
-import org.hamcrest.*;
 
 public class SwaggerPetstoreVerifications<SELF extends SwaggerPetstoreVerifications<SELF>>
     extends RestVerifications<SELF> {

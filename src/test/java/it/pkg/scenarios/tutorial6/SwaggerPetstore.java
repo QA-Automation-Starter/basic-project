@@ -16,9 +16,13 @@
 
 package it.pkg.scenarios.tutorial6;
 
-import static dev.aherscu.qa.testing.utils.StreamMatchersExtensions.adaptedStream;
-import static dev.aherscu.qa.testing.utils.StreamMatchersExtensions.hasItemsMatching;
+import static dev.aherscu.qa.jgiven.commons.utils.AbstractCsvDataProvider.*;
+import static dev.aherscu.qa.testing.utils.StreamMatchersExtensions.*;
+import static jakarta.ws.rs.core.Response.Status.Family.*;
 import static org.hamcrest.Matchers.*;
+import static org.hamcrest.Matchers.equalTo;
+
+import org.testng.annotations.*;
 
 import dev.aherscu.qa.jgiven.commons.model.*;
 import dev.aherscu.qa.jgiven.commons.utils.*;
@@ -29,11 +33,18 @@ import it.pkg.*;
 import it.pkg.model.tutorial.*;
 import it.pkg.steps.tutorial.*;
 import jakarta.ws.rs.client.*;
-import org.testng.annotations.*;
 
 @RestTest
 public class SwaggerPetstore extends
     ConfigurableScenarioTest<TestConfiguration, RestScenarioType, SwaggerPetstoreFixtures<?>, SwaggerPetstoreActions<?>, SwaggerPetstoreVerifications<?>> {
+
+    public static final class CredentialsCsvDataProvider
+        extends AbstractCsvDataProvider {
+        @Override
+        protected Class<?> type() {
+            return Credentials.class;
+        }
+    }
 
     protected SwaggerPetstore() {
         super(TestConfiguration.class);
@@ -51,20 +62,18 @@ public class SwaggerPetstore extends
         client = LoggingClientBuilder.newClient();
     }
 
-    @Test
-    public void shouldLogin() {
+    @Test(dataProviderClass = CredentialsCsvDataProvider.class, dataProvider = DATA)
+    public void shouldLogin(final Credentials credentials) {
         given()
             .a_swagger_petstore(client)
             .with(configuration());
 
         when()
-            .logging_in(Credentials.builder()
-                .userName(new Name("username"))
-                .password(new Password("password"))
-                .build());
+            .logging_in_with(credentials);
 
         then()
-            .the_login_response(hasProperty("code", equalTo(200)));
+            .the_login_response(hasProperty("code", equalTo(200)))
+            .and().the_response_status(is(SUCCESSFUL));
     }
 
     @Test
