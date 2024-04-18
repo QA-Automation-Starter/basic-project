@@ -106,6 +106,11 @@
       <artifactId>jackson-databind</artifactId>
       <version>${jackson.version}</version>
     </dependency>
+    <dependency>
+      <groupId>dev.aherscu.qa</groupId>
+      <artifactId>qa-testing-extra</artifactId>
+      <version>1.0.4-SNAPSHOT</version>
+    </dependency>
   </dependencies>
 
   <build>

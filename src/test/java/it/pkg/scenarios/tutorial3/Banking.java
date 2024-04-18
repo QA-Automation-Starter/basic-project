@@ -22,7 +22,7 @@ import static org.apache.commons.lang3.RandomStringUtils.*;
 import static org.hamcrest.Matchers.*;
 import static org.hamcrest.Matchers.equalTo;
 
-import dev.aherscu.qa.jgiven.webdriver.*;
+import it.pkg.model.tutorial.*;
 import java.util.stream.*;
 
 import org.hamcrest.*;
@@ -30,21 +30,16 @@ import org.testng.annotations.*;
 
 import dev.aherscu.qa.jgiven.commons.model.*;
 import dev.aherscu.qa.jgiven.commons.tags.*;
+import dev.aherscu.qa.jgiven.webdriver.*;
 import it.pkg.*;
 import it.pkg.steps.tutorial.*;
 import lombok.*;
 
-public class TestingWebWithJGiven
+public class Banking
     extends
-    ApplicationPerMethodWebSessionTest<TestConfiguration, GoogleFixtures<?>, GoogleActions<?>, GoogleVerifications<?>> {
+    ApplicationPerMethodWebSessionTest<TestConfiguration, BankFixtures<?>, BankActions<?>, BankVerifications<?>> {
 
-    private static class QuotedText extends Text {
-        public QuotedText(final String value) {
-            super(wrap(value, DOUBLE_QUOTE));
-        }
-    }
-
-    protected TestingWebWithJGiven() {
+    protected Banking() {
         super(TestConfiguration.class);
     }
 
@@ -56,30 +51,26 @@ public class TestingWebWithJGiven
         webDriver.get().asRemote().manage().window().maximize();
     }
 
-    @Reference("68")
     @Test(dataProvider = INTERNAL_DATA_PROVIDER)
-    public void shouldFind(
-        final Text textToSearch,
-        final Matcher<Stream<String>> titleRule) {
+    public void shouldCreateCustomer(final Customer customer) {
         given()
-            .google(webDriver.get());
+            .a_bank(webDriver.get());
 
         when()
-            .searching_for(textToSearch);
+            .adding(customer);
 
         then()
-            .the_results(
-                adaptedStream(googleResult -> googleResult.title.value,
-                    titleRule));
+            .the_customers(hasSpecificItems(customer));
     }
 
-    @DataProvider(parallel = true)
-    private Object[][] data() {
-        return new Object[][] {
-            { new QuotedText(randomAlphanumeric(40)),
-                counts(equalTo(0L)) },
-            { new QuotedText("testng"),
-                anyMatch(containsStringIgnoringCase("testng")) }
+    @DataProvider//(parallel = true)
+    private Customer[] data() {
+        return new Customer[] {
+            Customer.builder()
+                .firstName("kuku")
+                .lastName("bar")
+                .postalCode("12345")
+                .build()
         };
     }
 }
