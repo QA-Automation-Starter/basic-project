@@ -35,6 +35,8 @@
       <class
           name="it.pkg.scenarios.tutorial3.TestingWebWithJGiven" />
       <class
+          name="it.pkg.scenarios.tutorial3.Banking" />
+      <class
         name="it.pkg.scenarios.tutorial6.SwaggerPetstore" />
       <class
           name="it.pkg.scenarios.tutorial6.Binance" />
