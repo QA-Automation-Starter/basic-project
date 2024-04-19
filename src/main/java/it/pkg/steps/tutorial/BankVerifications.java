@@ -21,7 +21,6 @@ import java.util.stream.*;
 import org.hamcrest.*;
 import org.openqa.selenium.*;
 
-import dev.aherscu.qa.jgiven.commons.model.*;
 import dev.aherscu.qa.jgiven.commons.utils.*;
 import dev.aherscu.qa.jgiven.webdriver.steps.*;
 import it.pkg.model.tutorial.*;

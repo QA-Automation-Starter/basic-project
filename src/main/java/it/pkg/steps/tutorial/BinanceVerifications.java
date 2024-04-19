@@ -17,7 +17,6 @@
 package it.pkg.steps.tutorial;
 
 import static dev.aherscu.qa.testing.utils.ObjectMapperUtils.*;
-import static org.hamcrest.MatcherAssert.*;
 
 import java.util.stream.*;
 

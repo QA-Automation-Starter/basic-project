@@ -16,11 +16,10 @@
 
 package it.pkg.steps.tutorial;
 
-import it.pkg.model.tutorial.*;
 import org.openqa.selenium.*;
 
-import dev.aherscu.qa.jgiven.commons.model.*;
 import dev.aherscu.qa.jgiven.webdriver.steps.*;
+import it.pkg.model.tutorial.*;
 
 public class BankActions<SELF extends BankActions<SELF>>
     extends WebDriverActions<SELF> {

@@ -17,21 +17,12 @@
 package it.pkg.scenarios.tutorial3;
 
 import static dev.aherscu.qa.testing.utils.StreamMatchersExtensions.*;
-import static dev.aherscu.qa.testing.utils.StringUtilsExtensions.*;
-import static org.apache.commons.lang3.RandomStringUtils.*;
-import static org.hamcrest.Matchers.*;
-import static org.hamcrest.Matchers.equalTo;
 
-import it.pkg.model.tutorial.*;
-import java.util.stream.*;
-
-import org.hamcrest.*;
 import org.testng.annotations.*;
 
-import dev.aherscu.qa.jgiven.commons.model.*;
-import dev.aherscu.qa.jgiven.commons.tags.*;
 import dev.aherscu.qa.jgiven.webdriver.*;
 import it.pkg.*;
+import it.pkg.model.tutorial.*;
 import it.pkg.steps.tutorial.*;
 import lombok.*;
 

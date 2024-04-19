@@ -16,15 +16,10 @@
 
 package it.pkg.scenarios.tutorial6;
 
-import static dev.aherscu.qa.jgiven.commons.utils.AbstractCsvDataProvider.*;
 import static dev.aherscu.qa.testing.utils.StreamMatchersExtensions.*;
-import static jakarta.ws.rs.core.Response.Status.Family.*;
-import static org.hamcrest.Matchers.*;
-import static org.hamcrest.Matchers.equalTo;
 
 import org.testng.annotations.*;
 
-import dev.aherscu.qa.jgiven.commons.model.*;
 import dev.aherscu.qa.jgiven.commons.utils.*;
 import dev.aherscu.qa.jgiven.rest.model.*;
 import dev.aherscu.qa.jgiven.rest.tags.*;
@@ -67,7 +62,7 @@ public class Binance extends
             .the_exchange_info(hasSpecificItems(Symbol.builder()
                 .symbol("BTCUSDT")
                 .baseAsset("BTC")
-                .contractType("PERPETUAL1")
+                .contractType("PERPETUAL")
                 .build()));
     }
 }
