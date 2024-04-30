@@ -12,7 +12,6 @@
     }
   },
   "mounts": [
-    "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind", // Binding the host docker socket to the container
     "source=m2volume,target=/home/vscode/.m2,type=volume" // Establishing a persistent volume for maven local repository downloads
   ],
   // Use 'forwardPorts' to make a list of ports inside the container available locally.
