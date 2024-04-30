@@ -12,7 +12,7 @@
     }
   },
   "mounts": [
-    "source=m2volume,target=/home/vscode/.m2,type=volume" // Establishing a persistent volume for maven local repository downloads
+    "source=${localEnv:HOME}/.m2,target=/home/vscode/.m2,type=bind,consistency=cached" // Establishing a persistent volume for maven local repository downloads
   ],
   // Use 'forwardPorts' to make a list of ports inside the container available locally.
   // "forwardPorts": [],
