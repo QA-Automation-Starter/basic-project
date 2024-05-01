@@ -3,16 +3,16 @@
 {
   "name": "main",
   // Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-  "image": "mcr.microsoft.com/devcontainers/java:1-11-bullseye",
+  "image": "mcr.microsoft.com/devcontainers/java:11",
   "features": {
     "ghcr.io/devcontainers/features/java:1": {
-      "version": "none",
-      "installMaven": "true",
-      "installGradle": "false"
+      "version": "11",
+      "installMaven": "true"
     }
   },
   "mounts": [
-    "source=${localEnv:HOME}/.m2,target=/home/vscode/.m2,type=bind,consistency=cached" // Establishing a persistent volume for maven local repository downloads
+    "source=${localEnv:HOME}/.m2,target=/home/vscode/.m2,type=bind,consistency=cached"
+    // Establishing a persistent volume for maven local repository downloads
   ],
   // Use 'forwardPorts' to make a list of ports inside the container available locally.
   // "forwardPorts": [],
@@ -30,7 +30,6 @@
     },
     "vscode": {
       "extensions": [
-        "vscjava.vscode-java-pack",
         "alphabotsec.vscode-eclipse-keybindings",
         "ms-vscode-remote.vscode-remote-extensionpack"
       ],
@@ -41,18 +40,19 @@
         "java.configuration.updateBuildConfiguration": "automatic",
         "java.sources.organizeImports.starThreshold": 1,
         "java.sources.organizeImports.staticStarThreshold": 1,
-        "java.configuration.runtimes": [
-          {
-            "name": "JavaSE-11",
-            "path": "/usr/lib/jvm/msopenjdk-current"
-          }
-        ],
-        "maven.terminal.customEnv": [
-          {
-              "environmentVariable": "JAVA_HOME",                
-              "value": "/usr/lib/jvm/msopenjdk-current"
-          }
-      ]    
+        // DELETEME
+        //        "java.configuration.runtimes": [
+        //          {
+        //            "name": "JavaSE-11",
+        //            "path": "/usr/lib/jvm/msopenjdk-current"
+        //          }
+        //        ],
+        //        "maven.terminal.customEnv": [
+        //          {
+        //            "environmentVariable": "JAVA_HOME",
+        //            "value": "/usr/lib/jvm/msopenjdk-current"
+        //          }
+        //        ]
       }
     }
   }
