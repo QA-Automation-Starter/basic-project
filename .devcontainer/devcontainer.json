@@ -34,6 +34,7 @@
         "ms-vscode-remote.vscode-remote-extensionpack"
       ],
       "settings": {
+        "java.server.launchMode": "Standard",
         "java.compile.nullAnalysis.mode": "automatic",
         "java.dependency.packagePresentation": "hierarchical",
         "java.configuration.updateBuildConfiguration": "automatic",
