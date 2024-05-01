@@ -35,24 +35,14 @@
       ],
       "settings": {
         "java.compile.nullAnalysis.mode": "automatic",
-        "maven.view": "flat",
         "java.dependency.packagePresentation": "hierarchical",
         "java.configuration.updateBuildConfiguration": "automatic",
         "java.sources.organizeImports.starThreshold": 1,
         "java.sources.organizeImports.staticStarThreshold": 1,
-        // DELETEME
-        //        "java.configuration.runtimes": [
-        //          {
-        //            "name": "JavaSE-11",
-        //            "path": "/usr/lib/jvm/msopenjdk-current"
-        //          }
-        //        ],
-        //        "maven.terminal.customEnv": [
-        //          {
-        //            "environmentVariable": "JAVA_HOME",
-        //            "value": "/usr/lib/jvm/msopenjdk-current"
-        //          }
-        //        ]
+        "maven.terminal.useJavaHome": true,
+        "maven.pomfile.prefetchEffectivePom": true,
+        "maven.pomfile.autoUpdateEffectivePOM": true,
+        "maven.projectOpenBehavior": "Open"
       }
     }
   }
