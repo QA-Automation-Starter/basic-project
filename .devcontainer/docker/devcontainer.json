@@ -3,12 +3,10 @@
 {
   "name": "docker",
   // Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-  "image": "mcr.microsoft.com/devcontainers/java:1-11-bullseye",
+  "image": "mcr.microsoft.com/devcontainers/java:11",
   "features": {
     "ghcr.io/devcontainers/features/java:1": {
-      "version": "none",
-      "installMaven": "true",
-      "installGradle": "false"
+      "version": "11"
     }
   },
   "mounts": [
@@ -30,7 +28,6 @@
     },
     "vscode": {
       "extensions": [
-        "vscjava.vscode-java-pack",
         "alphabotsec.vscode-eclipse-keybindings",
         "ms-vscode-remote.vscode-remote-extensionpack"
       ],
@@ -40,19 +37,20 @@
         "java.dependency.packagePresentation": "hierarchical",
         "java.configuration.updateBuildConfiguration": "automatic",
         "java.sources.organizeImports.starThreshold": 1,
-        "java.sources.organizeImports.staticStarThreshold": 1,
-        "java.configuration.runtimes": [
-          {
-            "name": "JavaSE-11",
-            "path": "/usr/lib/jvm/msopenjdk-current"
-          }
-        ],
-        "maven.terminal.customEnv": [
-          {
-            "environmentVariable": "JAVA_HOME",
-            "value": "/usr/lib/jvm/msopenjdk-current"
-          }
-        ]
+        "java.sources.organizeImports.staticStarThreshold": 1
+        // DELETEME
+//        "java.configuration.runtimes": [
+//          {
+//            "name": "JavaSE-11",
+//            "path": "/usr/lib/jvm/msopenjdk-current"
+//          }
+//        ],
+//        "maven.terminal.customEnv": [
+//          {
+//            "environmentVariable": "JAVA_HOME",
+//            "value": "/usr/lib/jvm/msopenjdk-current"
+//          }
+//        ]
       }
     }
   }
