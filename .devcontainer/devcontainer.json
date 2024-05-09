@@ -11,6 +11,7 @@
     }
   },
   "mounts": [
+    // ISSUE fails both in codespaces and in local docker
     // "source=${localEnv:HOME}/.m2,target=/home/vscode/.m2,type=bind,consistency=cached"
     // Establishing a persistent volume for maven local repository downloads
   ],
@@ -34,16 +35,7 @@
         "ms-vscode-remote.vscode-remote-extensionpack"
       ],
       "settings": {
-        "java.server.launchMode": "Standard",
-        "java.compile.nullAnalysis.mode": "automatic",
-        "java.dependency.packagePresentation": "hierarchical",
-        "java.configuration.updateBuildConfiguration": "automatic",
-        "java.sources.organizeImports.starThreshold": 1,
-        "java.sources.organizeImports.staticStarThreshold": 1,
-        "maven.terminal.useJavaHome": true,
-        "maven.pomfile.prefetchEffectivePom": true,
-        "maven.pomfile.autoUpdateEffectivePOM": true,
-        "maven.projectOpenBehavior": "Open"
+        "maven.pomfile.prefetchEffectivePom": true
       }
     }
   }

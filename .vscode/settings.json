@@ -4,5 +4,31 @@
     "java.dependency.packagePresentation": "hierarchical",
     "java.configuration.updateBuildConfiguration": "automatic",
     "java.sources.organizeImports.starThreshold": 1,
-    "java.sources.organizeImports.staticStarThreshold": 1
+    "java.sources.organizeImports.staticStarThreshold": 1,
+    "java.server.launchMode": "Standard",
+    "maven.terminal.useJavaHome": true,
+    "maven.pomfile.autoUpdateEffectivePOM": true,
+    "maven.projectOpenBehavior": "Open",
+    "java.test.defaultConfig": "local",
+    "java.test.config": {
+        "name": "local",
+        "vmArgs": [
+            "-Dlog.root.level=trace",
+            "-Dlogback.configurationFile=logback-test.xml",
+            "-Dpoll.timeout=15",
+            "-Dpoll.delay=5",
+            "-Dsaucelabs.reporter.url=",
+            "-Dprovider=provider.local.",
+            "-Ddevice.type=",
+            "-Dbuild.label=STANDALONE",
+            "-Dbuild.tags=",
+            "-Dapplication.filename=",
+            "-Dapplication.workingdir=",
+            "-Dtest.properties.file=environments/dev/test.properties",
+            "-Djgiven.report.dir=jgiven-reports",
+            "-Ddryrun=false",
+            "-Dscreenshots=true",
+            "-DscreenshotDelayMs=500",
+        ]
+    }
 }
