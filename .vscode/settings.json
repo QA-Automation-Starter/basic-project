@@ -9,6 +9,7 @@
     "maven.terminal.useJavaHome": true,
     "maven.pomfile.autoUpdateEffectivePOM": true,
     "maven.projectOpenBehavior": "Open",
+    "maven.executable.preferMavenWrapper": true,
     "java.test.defaultConfig": "local",
     "java.test.config": {
         "name": "local",
