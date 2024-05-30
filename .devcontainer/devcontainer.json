@@ -1,9 +1,10 @@
-// For format details, see https://aka.ms/devcontainer.json. For config options, see the
-// README at: https://github.com/devcontainers/templates/tree/main/src/java
 {
   "name": "main",
-  // Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-  "image": "mcr.microsoft.com/devcontainers/java:11",
+  "image": "registry.fedoraproject.org/fedora:latest",
+  "runArgs": ["--userns=keep-id"],
+  "settings": {
+    "terminal.integrated.shell.linux": "/bin/bash"
+  },
   "features": {
     "ghcr.io/devcontainers/features/java:1": {
       "version": "11",
@@ -38,7 +39,7 @@
         "maven.pomfile.prefetchEffectivePom": true
       }
     }
-  }
-  // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
-  // "remoteUser": "root"
+  },
+  "postCreateCommand": "dnf install -y java-11-openjdk-devel maven",
+  "remoteUser": "vscode"
 }
