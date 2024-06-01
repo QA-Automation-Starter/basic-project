@@ -41,5 +41,5 @@
     }
   },
   "postCreateCommand": "dnf install -y java-11-openjdk-devel maven",
-  "remoteUser": "adrianherscu"
+  "remoteUser": "root"
 }
