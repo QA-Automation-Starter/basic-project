@@ -1,6 +1,8 @@
 {
   "name": "basic-project",
-  "image": "openjdk:11",
+  "build": {
+    dockerfile: "Dockerfile"
+  },
   "features": {
     "ghcr.io/devcontainers/features/java:1": {
       "version": "11",
