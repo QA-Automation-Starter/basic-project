@@ -3,6 +3,10 @@
   "build": {
     dockerfile: "Dockerfile"
   },
+  "dockerComposeFile": [
+    "selenium-hub-docker.yml"
+  ],
+  service: "selenium-hub",
   "features": {
     "ghcr.io/devcontainers/features/java:1": {
       "version": "11",
