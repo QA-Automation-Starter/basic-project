@@ -1,12 +1,9 @@
 {
   "name": "basic-project",
-  "build": {
-    dockerfile: "Dockerfile"
-  },
   "dockerComposeFile": [
     "selenium-hub-docker.yml"
   ],
-  "service": "selenium-hub",
+  "service": "tests",
   "features": {
     "ghcr.io/devcontainers/features/java:1": {
       "version": "11",
