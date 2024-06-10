@@ -6,7 +6,7 @@
   "dockerComposeFile": [
     "selenium-hub-docker.yml"
   ],
-  service: "selenium-hub",
+  "service": "selenium-hub",
   "features": {
     "ghcr.io/devcontainers/features/java:1": {
       "version": "11",
