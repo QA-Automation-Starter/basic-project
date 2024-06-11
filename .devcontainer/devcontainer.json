@@ -4,6 +4,9 @@
     "selenium-hub-docker.yml"
   ],
   "service": "tests",
+  "mounts": [
+    "source=maven-cache,target=/root/.m2,type=volume"
+  ],
   "features": {
     "ghcr.io/devcontainers/features/java:1": {
       "version": "11",
