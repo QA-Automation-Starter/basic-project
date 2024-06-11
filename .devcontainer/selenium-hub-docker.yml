@@ -4,7 +4,7 @@
 version: "3"
 services:
   tests:
-    image: openjdk:11
+    image: eclipse-temurin:11
     command: sleep infinity
 
   chrome:
