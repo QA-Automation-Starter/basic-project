@@ -1,26 +1,15 @@
 {
-  "name": "main",
-  "image": "registry.fedoraproject.org/fedora:latest",
-//  "runArgs": ["--userns=keep-id"],
-  "settings": {
-    "terminal.integrated.shell.linux": "/bin/bash"
-  },
+  "name": "basic-project",
+  "dockerComposeFile": [
+    "selenium-hub-docker.yml"
+  ],
+  "service": "tests",
   "features": {
     "ghcr.io/devcontainers/features/java:1": {
       "version": "11",
       "installMaven": "true"
     }
   },
-  "mounts": [
-    // ISSUE fails both in codespaces and in local docker
-    // "source=${localEnv:HOME}/.m2,target=/home/vscode/.m2,type=bind,consistency=cached"
-    // Establishing a persistent volume for maven local repository downloads
-  ],
-  // Use 'forwardPorts' to make a list of ports inside the container available locally.
-  // "forwardPorts": [],
-  // Use 'postCreateCommand' to run commands after the container is created.
-  // "postCreateCommand": "java -version",
-  // Configure tool-specific properties.
   "customizations": {
     "jetbrains": {
       "backend": "IntelliJ"
@@ -39,7 +28,5 @@
         "maven.pomfile.prefetchEffectivePom": true
       }
     }
-  },
-  "postCreateCommand": "dnf install -y java-11-openjdk-devel maven",
-  "remoteUser": "adrianherscu"
+  }
 }
