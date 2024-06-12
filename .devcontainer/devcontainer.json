@@ -8,9 +8,6 @@
   "settings": {
     "java.home": "/docker-java-home"
   },
-  "mounts": [
-    "source=maven-cache,target=/root/.m2,type=volume"
-  ],
   "postCreateCommand": "cd /workspace && mvn clean install",
   "features": {
     "ghcr.io/devcontainers/features/java:1": {

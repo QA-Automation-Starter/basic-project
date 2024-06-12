@@ -8,7 +8,9 @@ volumes:
 
 services:
   tests:
-    image: eclipse-temurin:11
+    build:
+      context: .
+      dockerfile: Dockerfile
     volumes:
       - maven-cache:/root/.m2
     command: sleep infinity
