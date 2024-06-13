@@ -8,10 +8,10 @@ volumes:
 
 services:
   tests:
-    image: mcr.microsoft.com/vscode/devcontainers/java:11
+    image: mcr.microsoft.com/vscode/devcontainers/java
     build:
       args:
-        INSTALL_MAVEN: true
+        VARIANT: 11
     volumes:
       - maven-cache:/root/.m2
     command: sleep infinity
