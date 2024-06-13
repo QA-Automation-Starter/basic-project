@@ -3,6 +3,7 @@
   "dockerComposeFile": [
     "selenium-hub-docker.yml"
   ],
+  "workspaceFolder": "/workspace",
   "service": "tests",
   "features": {
     "ghcr.io/devcontainers/features/java:1": {
@@ -23,8 +24,7 @@
     },
     "vscode": {
       "extensions": [
-        "alphabotsec.vscode-eclipse-keybindings",
-        "ms-vscode-remote.vscode-remote-extensionpack"
+        "alphabotsec.vscode-eclipse-keybindings"
       ],
       "settings": {
         "maven.pomfile.prefetchEffectivePom": true
