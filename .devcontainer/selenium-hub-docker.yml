@@ -9,6 +9,9 @@ volumes:
 services:
   tests:
     image: mcr.microsoft.com/vscode/devcontainers/java:11
+    build:
+      args:
+        INSTALL_MAVEN: true
     volumes:
       - maven-cache:/root/.m2
     command: sleep infinity
