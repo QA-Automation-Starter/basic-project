@@ -8,9 +8,7 @@ volumes:
 
 services:
   tests:
-    build:
-      context: .
-      dockerfile: Dockerfile
+    image: alpine:latest
     volumes:
       - maven-cache:/root/.m2
     command: sleep infinity
