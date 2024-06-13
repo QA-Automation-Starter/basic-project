@@ -8,7 +8,7 @@ volumes:
 
 services:
   tests:
-    image: alpine:latest
+    image: ubuntu:latest
     volumes:
       - maven-cache:/root/.m2
     command: sleep infinity
