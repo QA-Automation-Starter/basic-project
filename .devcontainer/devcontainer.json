@@ -3,12 +3,7 @@
   "dockerComposeFile": [
     "selenium-hub-docker.yml"
   ],
-  "workspaceFolder": "/workspace",
   "service": "tests",
-//  "features": {
-//    "ghcr.io/devcontainers/features/git:1": {},
-//    "ghcr.io/devcontainers/features/common-utils:2": {}
-//  },
   "customizations": {
     "jetbrains": {
       "backend": "IntelliJ"
