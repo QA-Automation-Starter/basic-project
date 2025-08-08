@@ -23,7 +23,7 @@
   <parent>
     <groupId>dev.aherscu.qa</groupId>
     <artifactId>qa-testing-parent</artifactId>
-    <version>1.0.4-SNAPSHOT</version>
+    <version>${testing.version}</version>
   </parent>
 
   <groupId>archetype.it</groupId>
@@ -37,6 +37,7 @@
 
     <application.filename>Microsoft.WindowsCalculator_8wekyb3d8bbwe!App
     </application.filename>
+    <testing.version>1.0.8</testing.version>
   </properties>
 
   <!-- NOTE: releases to Central are slow -->
@@ -78,7 +79,7 @@
     <dependency>
       <groupId>dev.aherscu.qa</groupId>
       <artifactId>qa-jgiven-webdriver</artifactId>
-      <version>1.0.4-SNAPSHOT</version>
+      <version>${testing.version}</version>
     </dependency>
     <dependency>
       <groupId>org.mock-server</groupId>
@@ -88,17 +89,17 @@
     <dependency>
       <groupId>dev.aherscu.qa</groupId>
       <artifactId>qa-jgiven-rest</artifactId>
-      <version>1.0.4-SNAPSHOT</version>
+      <version>${testing.version}</version>
     </dependency>
     <dependency>
       <groupId>dev.aherscu.qa</groupId>
       <artifactId>qa-jgiven-rabbitmq</artifactId>
-      <version>1.0.4-SNAPSHOT</version>
+      <version>${testing.version}</version>
     </dependency>
     <dependency>
       <groupId>dev.aherscu.qa</groupId>
       <artifactId>qa-jgiven-elasticsearch</artifactId>
-      <version>1.0.4-SNAPSHOT</version>
+      <version>${testing.version}</version>
     </dependency>
     <!-- TODO add database tests via qa-jgiven-jdbc -->
     <dependency>
@@ -109,7 +110,7 @@
     <dependency>
       <groupId>dev.aherscu.qa</groupId>
       <artifactId>qa-testing-extra</artifactId>
-      <version>1.0.4-SNAPSHOT</version>
+      <version>${testing.version}</version>
     </dependency>
   </dependencies>
 

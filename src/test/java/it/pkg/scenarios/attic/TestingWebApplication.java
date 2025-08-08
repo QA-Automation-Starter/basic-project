@@ -25,6 +25,7 @@ import static org.hamcrest.Matchers.*;
 import static org.openqa.selenium.remote.CapabilityType.*;
 
 import java.net.*;
+import java.time.*;
 import java.util.function.*;
 
 import org.jooq.lambda.*;
@@ -35,7 +36,6 @@ import org.testng.annotations.*;
 
 import dev.aherscu.qa.jgiven.commons.utils.*;
 import edu.umd.cs.findbugs.annotations.*;
-import io.github.bonigarcia.wdm.*;
 import lombok.*;
 import lombok.extern.slf4j.*;
 
@@ -59,12 +59,10 @@ public class TestingWebApplication {
             // ISSUE Firefox cannot be installed on certain systems
             // { Unchecked.supplier(() -> {
             // log.trace("setting up firefox driver");
-            // WebDriverManager.firefoxdriver().setup();
             // return new FirefoxDriver();
             // }) },
             { Unchecked.supplier(() -> {
                 log.trace("setting up chrome driver");
-                WebDriverManager.chromedriver().setup();
                 return new ChromeDriver();
             }) },
             { Unchecked.supplier(() -> {
@@ -117,7 +115,7 @@ public class TestingWebApplication {
     private void beforeClassOpenWebDriver() {
         log.trace("before connecting selenium");
         webDriver.manage().window().maximize();
-        webDriver.manage().timeouts().implicitlyWait(10, SECONDS);
+        webDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         webDriver.get("https://google.com?hl=en"); // ensure English
     }
 }
