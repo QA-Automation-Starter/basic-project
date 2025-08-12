@@ -34,6 +34,7 @@ import it.pkg.*;
 import it.pkg.steps.tutorial.*;
 import lombok.*;
 
+@Ignore("blocked with a captcha")
 public class TestingWebWithJGiven
     extends
     ApplicationPerMethodWebSessionTest<TestConfiguration, GoogleFixtures<?>, GoogleActions<?>, GoogleVerifications<?>> {
